@@ -12,11 +12,10 @@ const iota = iotaLibrary.composeAPI({
   provider: 'https://nodes.devnet.thetangle.org:443'
 });
 
-const seed =
-  'HELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORL9D';
+const seed = 'KYLF9ALGUH9NGEDNBKYBDOQEYKVYIPMUCVUAVYJVXUAKX9CRXPEYHFYGYWHYBXKETFTFWIGYGPJLIRSWX';
 
 iota
-  .getNewAddress(seed, { index: 0, total: 1 })
+  .getNewAddress(seed, { index: 0, checksum: true, total: 1 })
   .then(address => {
     console.log('Your address is: ' + address);
     console.log('Paste this address into https://faucet.devnet.iota.org');

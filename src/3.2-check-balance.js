@@ -5,11 +5,10 @@
 const iotaLibrary = require('@iota/core');
 
 const iota = iotaLibrary.composeAPI({
-  provider: 'https://nodes.devnet.thetangle.org:443'
+  provider: 'https://private.tangle.jp:443'
 });
 
-const address =
-  'NBZLOBCWG9BAQTODDKNF9LYYTBOUWSQSGCWFQVZZR9QXCOAIBRYDTZOEGBGMZKJYZOPPGRGFFWTXUKUKW';
+const address = 'UUZUKVIPKCFRBTLLYXOXBMMEUERJFKHBMDGUGWBKE9YUKQENOHFEZUZOLBMETRPCADBFARGTMTZNYVHSDNSITZIVHX';
 
 iota
   .getBalances([address], 100)
