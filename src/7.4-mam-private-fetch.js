@@ -20,9 +20,9 @@ const logData = data => console.log(trytesToAscii(data));
 if (!process.argv[2]) return console.log('No Address!');
 const root = process.argv[2];
 
-const execute = async () => {
+const execute = async root => {
   // Callback used to pass data + returns next_root
   const resp = await Mam.fetch(root, mamType, mamSecret, logData);
 };
 
-execute();
+execute(root);
