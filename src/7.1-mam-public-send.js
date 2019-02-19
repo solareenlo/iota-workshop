@@ -5,6 +5,8 @@
 const Mam = require('@iota/mam');
 const { asciiToTrytes } = require('@iota/converter');
 
+const depth = 3;
+const minWeightMagnitude = 9;
 const provider = 'https://private.tangle.jp:443'
 
 let mamState = Mam.init(provider);
@@ -20,7 +22,7 @@ const publish = async data => {
   mamState = message.state;
 
   // Attach the message
-  await Mam.attach(message.payload, message.address, 3, 9);
+  await Mam.attach(message.payload, message.address, depth, minWeightMagnitude);
   console.log('Sent message to the Tangle!');
   console.log('Address: ' + message.root);
 };
