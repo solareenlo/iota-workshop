@@ -5,12 +5,13 @@
 const iotaLibrary = require('@iota/core');
 
 const iota = iotaLibrary.composeAPI({
-  provider: 'https://nodes.devnet.thetangle.org:443'
+  provider: 'https://private.tangle.jp:443'
 });
 
 // Replace this with the seed you sent tokens too!
-const seed =
-  'HELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORL9D';
+const seed = 'KYLF9ALGUH9NGEDNBKYBDOQEYKVYIPMUCVUAVYJVXUAKX9CRXPEYHFYGYWHYBXKETFTFWIGYGPJLIRSWX';
+const depth = 3;
+const minWeightMagnitude = 9;
 
 // Create a wrapping function so we can use async/await
 const main = async () => {
@@ -25,7 +26,7 @@ const main = async () => {
     {
       value: 500,
       address: receivingAddress[0],
-      tag: 'MYMAGIC'
+      tag: 'SOLA'
     }
   ];
   console.log('Sending 500i to ' + receivingAddress);
@@ -34,7 +35,7 @@ const main = async () => {
     // Construct bundle and convert to trytes
     const trytes = await iota.prepareTransfers(seed, transfers);
     // Send bundle to node.
-    const response = await iota.sendTrytes(trytes, 3, 9);
+    const response = await iota.sendTrytes(trytes, depth, minWeightMagnitude);
 
     console.log('Completed TXs');
     response.map(tx => console.log(tx));
