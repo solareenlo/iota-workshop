@@ -2,14 +2,17 @@
 // MAM: Fetch messages to Public Stream
 ///////////////////////////////
 
-const Mam = require('@iota/mam');
+// const Mam = require('@iota/mam');
+const Mam = require('../lib/mam.client.js')
 const { trytesToAscii } = require('@iota/converter');
 
-// Initialize MAM State - PUBLIC
-Mam.init('https://nodes.devnet.thetangle.org:443');
+const provider = 'https://private.tangle.jp:443'
 
-const root =
-  'OXPOYTSZEOGUOITHYBWDYHXNCLRVQHGXMFMEIJLNHNDEWJYWQHGRPTQJ99MUWRDAOVPBIGSW9MSQLMOOA';
+// Initialize MAM State - PUBLIC
+Mam.init(provider);
+
+if (!process.argv[2]) return console.log('No Address!');
+const root = process.argv[2];
 
 // Display coordinate data on our screen when we receive it
 const showData = raw => {
@@ -17,8 +20,12 @@ const showData = raw => {
   console.log(data);
 };
 
-const readMam = async () => {
-  await Mam.fetch(root, 'public', null, showData);
+const readMam = async root => {
+  try {
+    await Mam.fetch(root, 'public', null, showData)
+  } catch (e) {
+    console.log(e)
+  }
 };
 
-readMam();
+readMam(root);

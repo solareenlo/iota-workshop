@@ -5,7 +5,9 @@
 const Mam = require('@iota/mam');
 const { asciiToTrytes } = require('@iota/converter');
 
-let mamState = Mam.init('https://nodes.devnet.thetangle.org:443');
+const provider = 'https://private.tangle.jp:443'
+
+let mamState = Mam.init(provider);
 mamState = Mam.changeMode(mamState, 'public');
 
 const publish = async data => {
