@@ -5,11 +5,15 @@
 const Mam = require('@iota/mam');
 const { asciiToTrytes } = require('@iota/converter');
 
-let mamState = Mam.init('https://nodes.devnet.thetangle.org:443');
+const depth = 3;
+const minWeightMagnitude = 9;
+
+const provider = 'https://private.tangle.jp:443'
+let mamState = Mam.init(provider);
 
 // We are using MAM restricted mode with a shared secret in this example
 const mamType = 'restricted';
-const mamSecret = 'DONTSHARETHIS';
+const mamSecret = 'FQYHOVFLTDQDZIIFJQTGDPYMOQFCJIT9GIMASFBLVMTKFUTGTIJ9Q9HYBNVNMWEUPBKWOQTKYLQYINYBZ';
 
 mamState = Mam.changeMode(mamState, mamType, mamSecret);
 
@@ -22,10 +26,10 @@ const publish = async data => {
   mamState = message.state;
 
   // Attach the message
-  await Mam.attach(message.payload, message.address, 3, 9);
+  await Mam.attach(message.payload, message.address, depth, minWeightMagnitude);
   console.log('Sent message to the Tangle!');
   console.log('Address: ' + message.root);
 };
 
-publish('Super Secret Message');
+publish('Super Secret Message1');
 publish('Super Secret Message2');
