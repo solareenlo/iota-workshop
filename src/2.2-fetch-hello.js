@@ -5,11 +5,10 @@
 const iotaLibrary = require('@iota/core');
 
 const iota = iotaLibrary.composeAPI({
-  provider: 'https://nodes.devnet.thetangle.org:443'
+  provider: 'https://private.tangle.jp:443'
 });
 
-const address =
-  'HELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORL9D';
+const address = 'HELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLD9'
 
 iota
   .findTransactionObjects({ addresses: [address] })
