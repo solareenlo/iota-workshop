@@ -6,11 +6,10 @@ const iotaLibrary = require('@iota/core');
 const Converter = require('@iota/converter');
 
 const iota = iotaLibrary.composeAPI({
-  provider: 'https://nodes.devnet.thetangle.org:443'
+  provider: 'https://private.tangle.jp:443'
 });
 
-const address =
-  'HELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLQD';
+const address = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
 
 iota
   .findTransactionObjects({ addresses: [address] })
