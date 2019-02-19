@@ -2,16 +2,16 @@
 // Send HELLOWORLD
 ///////////////////////////////
 
-const iotaLibrary = require('@iota/core')
+const iotaLibrary = require('@iota/core');
 
 const iota = iotaLibrary.composeAPI({
   provider: 'https://nodes.devnet.thetangle.org:443'
-})
+});
 
 const address =
-  'HEQLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORL9D'
+  'HEQLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORL9D';
 const seed =
-  'PUEOTSEITFEVEWCWBTSIZM9NKRGJEIMXTULBACGFRQK9IMGICLBKW9TTEVSDQMGWKBXPVCBMMCXWMNPDX'
+  'PUEOTSEITFEVEWCWBTSIZM9NKRGJEIMXTULBACGFRQK9IMGICLBKW9TTEVSDQMGWKBXPVCBMMCXWMNPDX';
 
 const transfers = [
   {
@@ -19,14 +19,14 @@ const transfers = [
     address: address,
     message: 'HELLOWORLD'
   }
-]
+];
 
 iota
   .prepareTransfers(seed, transfers)
   .then(trytes => iota.sendTrytes(trytes, (depth = 3), (mwm = 9)))
   .then(bundle => {
-    console.log(bundle)
+    console.log(bundle);
   })
   .catch(err => {
-    console.error(err)
-  })
+    console.error(err);
+  });

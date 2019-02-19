@@ -6,21 +6,21 @@
 // Paste the output of the above code into the 'seed' section below.
 ///////////////////////////////
 
-const iotaLibrary = require('@iota/core')
+const iotaLibrary = require('@iota/core');
 
 const iota = iotaLibrary.composeAPI({
   provider: 'https://nodes.devnet.thetangle.org:443'
-})
+});
 
 const seed =
-  'HELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORL9D'
+  'HELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORL9D';
 
 iota
   .getNewAddress(seed, { index: 0, total: 1 })
   .then(address => {
-    console.log('Your address is: ' + address)
-    console.log('Paste this address into https://faucet.devnet.iota.org')
+    console.log('Your address is: ' + address);
+    console.log('Paste this address into https://faucet.devnet.iota.org');
   })
   .catch(err => {
-    console.log(err)
-  })
+    console.log(err);
+  });
