@@ -6,7 +6,8 @@ let zmq = require('zeromq');
 let sock = zmq.socket('sub');
 
 // Connect to the devnet node's ZMQ port
-sock.connect('tcp://zmq.devnet.iota.org:5556');
+// sock.connect('tcp://zmq.devnet.iota.org:5556');
+sock.connect('tcp://private.tangle.jp:5556');
 
 // Check if there is no command line argument
 if (!process.argv[2]) {
