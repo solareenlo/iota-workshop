@@ -11,7 +11,7 @@ const mamType = 'restricted';
 const mamSecret = 'FQYHOVFLTDQDZIIFJQTGDPYMOQFCJIT9GIMASFBLVMTKFUTGTIJ9Q9HYBNVNMWEUPBKWOQTKYLQYINYBZ';
 
 // Initialise MAM State
-const provider = 'https://private.tangle.jp:443'
+const provider = 'https://private.tangle.jp:443';
 let mamState = Mam.init(provider);
 
 // Callback used to pass data out of the fetch

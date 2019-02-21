@@ -8,7 +8,7 @@ const { asciiToTrytes } = require('@iota/converter');
 const depth = 3;
 const minWeightMagnitude = 9;
 
-const provider = 'https://private.tangle.jp:443'
+const provider = 'https://private.tangle.jp:443';
 let mamState = Mam.init(provider);
 
 // We are using MAM restricted mode with a shared secret in this example
