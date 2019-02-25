@@ -1,26 +1,26 @@
 # IOTA Workshop
 
-Simple examples to help a developer work through interacting with the IOTA network. 
+IOTAのJSライブラリーを使ってみよう.
 
-### Getting started
-
-To start playing with these examples run the following commands:
+### Usage
 
 ```bash
-git clone https://github.com/iota-community/iota-workshop.git
+git clone https://github.com/solareenlo/iota-workshop.git
 cd iota-workshop
 npm i
-node code/1-hello-world.js
+node src/1-hello-world.js
 ```
-
-You should receive a message including the statistics of an IOTA node. This means you can explore and run the other examples.
+以上を行うことで, 接続しているIOTAノードの情報が標準出力に表示されると思います.  
+同様に色々と試してみてください.
 
 
 
 ### Examples included
 
-Here are the examples included:
+以下のプログラムがあります.
 
+- 0.1-make-seed-mac.sh
+- 0.2-make-seed-linux.sh
 - 1-hello-world.js
 - 2.1-send-hello.js
 - 2.2-fetch-hello.js
@@ -36,6 +36,7 @@ Here are the examples included:
 - 7.3-mam-private-send.js
 - 7.4-mam-private-fetch.js
 - 7.5-mam-public-watch.js
+- detailed-transaction-creation.js
 
 
 
